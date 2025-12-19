@@ -14,3 +14,9 @@ python/__pycache__/
 
 # Deno
 deno/.deno/
+
+# OCaml
+ocaml/*.cmi
+ocaml/*.cmx
+ocaml/*.o
+ocaml/traveling-santa

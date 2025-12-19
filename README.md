@@ -33,6 +33,7 @@ The distance constraint dramatically prunes the search space compared to brute-f
 | Language | Lines | Data Structure | Notes |
 |----------|-------|----------------|-------|
 | Python   | 45    | Dict + Set | Closures, list slicing, f-strings |
+| OCaml    | 51    | Hashtbl + Array | Pattern matching, refs, functional style |
 | Deno/TS  | 53    | Record + Set | Similar to Python, with types |
 | Go       | 85    | Map + Slice | Explicit copying, verbose error handling |
 | C        | 90    | 2D Array + Dynamic array | Manual memory management |
@@ -45,6 +46,12 @@ The distance constraint dramatically prunes the search space compared to brute-f
 - List slicing (`remaining[1:]`)
 - Nested function captures `solutions` without explicit passing
 - f-strings and `enumerate` reduce boilerplate
+
+**OCaml (51 lines)** - Functional elegance:
+- Pattern matching on list (`[] | d :: rest`)
+- Mutable refs for solutions accumulator
+- Hashtbl with tuple keys for distances
+- Terse syntax, minimal punctuation
 
 **Deno/TypeScript (53 lines)** - Clean with types:
 - Record type for distances, Set for visited
@@ -79,6 +86,7 @@ traveling-santa/
 ├── go/main.go          # Go implementation
 ├── python/main.py      # Python implementation
 ├── deno/main.ts        # Deno/TypeScript implementation
+├── ocaml/main.ml       # OCaml implementation
 ├── test.sh             # Black-box test suite
 └── docs/
     ├── REQUIREMENTS.md # Problem specification
@@ -97,6 +105,7 @@ cd c && make && ./traveling-santa 10 4 4 6 4
 cd go && go run main.go 10 4 4 6 4
 cd python && uv run main.py 10 4 4 6 4
 cd deno && deno run main.ts 10 4 4 6 4
+cd ocaml && ocamlopt -o traveling-santa main.ml && ./traveling-santa 10 4 4 6 4
 ```
 
 ## City Distances
