@@ -11,3 +11,6 @@ go/traveling-santa
 python/.venv/
 python/__pycache__/
 *.pyc
+
+# Deno
+deno/.deno/
