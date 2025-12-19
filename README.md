@@ -2,6 +2,10 @@
 
 A coding challenge solved in multiple languages to compare implementation approaches, verbosity, and readability.
 
+## 100% AI-Generated
+
+Every line of code in this repository was written by Claude (Opus 4.5). There's a claim that LLMs struggle with this problem and produce messy, unreadable solutions. This project exists to prove otherwise: clean, idiomatic implementations across 7 languages, from Python to ARM64 assembly, all generated in a single session with proper planning and TDD.
+
 ## The Challenge
 
 Santa spilled hot chocolate on his itinerary, obscuring city names but leaving travel distances visible. Given the distances between all cities and a sequence of traveled distances, reconstruct all possible routes that match.
