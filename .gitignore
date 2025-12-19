@@ -20,3 +20,7 @@ ocaml/*.cmi
 ocaml/*.cmx
 ocaml/*.o
 ocaml/traveling-santa
+
+# Assembly
+asm/*.o
+asm/traveling-santa

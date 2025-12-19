@@ -8,6 +8,7 @@ echo "Building..."
 (cd c && make -s)
 (cd go && go build -o traveling-santa)
 (cd ocaml && eval $(opam env) && ocamlopt -o traveling-santa main.ml 2>/dev/null)
+(cd asm && make -s 2>/dev/null)
 
 pass=0 fail=0
 
@@ -23,7 +24,7 @@ check() {
     name=$1; shift
     expected=$1; shift
 
-    for bin in ./rust/target/release/traveling-santa ./c/traveling-santa ./go/traveling-santa ./ocaml/traveling-santa python deno; do
+    for bin in ./rust/target/release/traveling-santa ./c/traveling-santa ./go/traveling-santa ./ocaml/traveling-santa ./asm/traveling-santa python deno; do
         result=$(run_bin "$bin" "$@" || true)
         if echo "$result" | grep -q "$expected"; then
             ((pass++))

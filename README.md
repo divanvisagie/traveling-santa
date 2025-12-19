@@ -38,6 +38,7 @@ The distance constraint dramatically prunes the search space compared to brute-f
 | Go       | 85    | Map + Slice | Explicit copying, verbose error handling |
 | C        | 90    | 2D Array + Dynamic array | Manual memory management |
 | Rust     | 90    | HashMap + Vec | Ownership, Option types |
+| ARM64    | 366   | Raw memory | Apple Silicon assembly, syscalls |
 
 ### Key Differences
 
@@ -77,6 +78,12 @@ The distance constraint dramatically prunes the search space compared to brute-f
 - Explicit mutability annotations
 - Iterator chains for transformations
 
+**ARM64 Assembly (366 lines)** - Maximum control:
+- Direct syscalls for I/O (`svc #0x80`)
+- Manual register allocation and stack management
+- Apple Silicon (M1/M2/M3) native
+- No standard library, no allocator
+
 ## Project Structure
 
 ```
@@ -87,6 +94,7 @@ traveling-santa/
 ├── python/main.py      # Python implementation
 ├── deno/main.ts        # Deno/TypeScript implementation
 ├── ocaml/main.ml       # OCaml implementation
+├── asm/main.s          # ARM64 assembly (Apple Silicon)
 ├── test.sh             # Black-box test suite
 └── docs/
     ├── REQUIREMENTS.md # Problem specification
@@ -106,6 +114,7 @@ cd go && go run main.go 10 4 4 6 4
 cd python && uv run main.py 10 4 4 6 4
 cd deno && deno run main.ts 10 4 4 6 4
 cd ocaml && ocamlopt -o traveling-santa main.ml && ./traveling-santa 10 4 4 6 4
+cd asm && make && ./traveling-santa 10 4 4 6 4
 ```
 
 ## City Distances
