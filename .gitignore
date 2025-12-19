@@ -1,0 +1,13 @@
+# Rust
+rust/target/
+
+# C
+c/traveling-santa
+
+# Go
+go/traveling-santa
+
+# Python
+python/.venv/
+python/__pycache__/
+*.pyc
