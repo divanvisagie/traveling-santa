@@ -88,23 +88,6 @@ The distance constraint dramatically prunes the search space compared to brute-f
 - Apple Silicon (M1/M2/M3) native
 - No standard library, no allocator
 
-## Project Structure
-
-```
-traveling-santa/
-├── rust/src/main.rs    # Rust implementation
-├── c/main.c            # C implementation
-├── go/main.go          # Go implementation
-├── python/main.py      # Python implementation
-├── deno/main.ts        # Deno/TypeScript implementation
-├── ocaml/main.ml       # OCaml implementation
-├── asm/main.s          # ARM64 assembly (Apple Silicon)
-├── test.sh             # Black-box test suite
-└── docs/
-    ├── REQUIREMENTS.md # Problem specification
-    └── DESIGN.md       # Algorithm design notes
-```
-
 ## Running
 
 ```bash
